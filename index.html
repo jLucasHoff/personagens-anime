@@ -187,7 +187,7 @@
         <img src="src/jujutsukaisen/jujutsukaisen_logo.png" class="world" onclick="setWorld(3, 'jujutsukaisen')">
         <img src="src/naruto/naruto_logo.png" class="world" onclick="setWorld(4, 'naruto')">
         -->
-        <img src="src/onepiece/onepiece_logo.png" class="world" onclick="setWorld(5, 'onepiece')">
+        <img src="src/onepiece/onepiece_logo.png" class="world" onclick="preLoad(5, 'onepiece'); (5, 'onepiece')">
     </div>
     <main class="scene">
         <video id="star-banner" src="" loop autoplay></video>
@@ -264,30 +264,6 @@
             }, 1000);
         }
 
-        function setWorld2(wi, world, i=0) {
-            hideWorldBox(wi, world)
-            if(i!== 0) {banner.setAttribute('src', preMidia['wpp'][i].src); star_banner.style.opacity = '0'} else {star_banner.style.opacity = '1'}
-            logo.setAttribute('src', preMidia['logo'].src)
-            name.innerText = preMidia['name'][i]
-            desc.innerText = preMidia['desc'][i]
-            for(let i=0; i < crewmates.length; i++) {
-                crewmates[i].setAttribute('src', preMidia['tokens'][i].src)
-                crewmates[i].style.transform = 'translateX(0px) rotate(0deg)'
-            }
-            star_banner.style.opacity = '1'
-            banner.style.opacity = '1'
-            logo.style.opacity = '1'
-            logo.style.transform = 'translateX(0px)'
-            setTimeout(() => {
-                name.style.opacity = '1'
-                name.style.transform = 'translateX(0px)'
-            }, 500);
-            setTimeout(() => {
-                desc.style.opacity = '1'
-                desc.style.transform = 'translateX(0px)'
-            }, 1000);
-        }
-
         function disableWorld() {
             desc.style.opacity = '0'
             desc.style.transform = 'translateX(-50px)'
@@ -313,7 +289,9 @@
         function hideWorldBox(wi, world) {
             worldBox.classList.add('close');
             worldBox.classList.remove('open');
+        }
 
+        function preLoad(wi, world) {
             const logo = new Image();
             logo.src = `src/${world}/${world}_logo.png`;
             preMidia['logo'] = logo;
