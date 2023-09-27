@@ -1,0 +1,403 @@
+<!--
+
+    naruto
+        naruto
+        sasuke
+        sakura
+        kakashi
+        itachi
+        jiraiya        
+        gaara
+        hinata
+        rock lee
+        shikamaru
+    dragon ball
+        Vegeta
+        Goku
+        Gohan
+        Goku Black
+        Trunks do Futuro
+        Bills
+        Whis
+        Android 17
+        Freeza
+        Kuririn
+    jujutsu kaisen
+        satoro gojo
+        itadori
+        megumi
+        nobara
+        sukuna
+        nanami
+        maki
+        toge
+        yuuta
+        aoi
+    chainsaw man
+        makima
+        power
+        denji
+        aki
+        reze
+        kobeni
+        pochita
+        angel
+        himeno
+        quanxi
+    bleach
+        ichigo
+        zaraki
+        urahara
+        hitsugaya
+        aizen
+        rukia
+        byakuya
+        yourichi
+        ichimaru
+        orihime
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet Chars</title>
+
+    <style>
+        @font-face {
+            font-family: 'header';
+            src: url('src/_fonts/header.ttf');
+        }
+
+        @font-face {
+            font-family: 'body';
+            src: url('src/_fonts/body.otf');
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            border: none;
+            outline: none;
+            color: white;
+        }
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+            overflow: hidden;
+        }
+
+        .scene {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #worlds {
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            align-content: center;
+            flex-wrap: wrap;
+            gap: 5vw;
+            box-sizing: border-box;
+            padding: 15%;
+            pointer-events: none;
+            opacity: 0;
+            transform: translate(0, 0, 0);
+            z-index: 2;
+            transition: 1s;
+        }
+
+        #worlds.open {
+            opacity: 1;
+            transform: translate(0, 0, 0);
+            pointer-events: all;
+        }
+
+        #worlds.close {
+            pointer-events: none;
+            opacity: 0;
+            transform: translateX(-20%);
+        }
+
+        .world {
+            width: 20vw;
+            height: fit-content;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .world:hover {
+            filter: brightness(1.25);
+        }
+
+        main {
+            flex-direction: row;
+            background: linear-gradient(145deg, rgba(0,0,0,0.8519782913165266) 30%, rgba(0,0,0,0) 90%);
+        }
+
+        main > * {
+            flex: 1;
+        }
+
+        #content {
+            flex: 9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            box-sizing: border-box;
+            padding: 0 10vw;
+        }
+
+        #content * {
+            overflow: hidden;
+        }
+
+        #logo {
+            width: 15vw;
+            opacity: 0;
+            transform: translateX(-50px);
+            cursor: pointer;
+            transition: .5s;
+        }
+
+        h2 {
+            font-family: 'header';
+            font-size: 8vh;
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: .5s;
+        }
+
+        span {
+            font-family: 'body';
+            letter-spacing: 1.2px;
+            line-height: 150%;
+            width: 35%;
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: .5s;
+        }
+
+        #crew {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .crewmates {
+            position: relative;
+            overflow: hidden;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            transform: translateX(100px) rotate(359deg);
+            transition: 1s;
+        }
+
+        .crewmates::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: black;
+        }
+
+        .crewmates:hover {
+            cursor: pointer;
+            transition: .3s;
+            transform: translateX(-25%) rotate(-45deg) !important;
+        }
+
+        #star-banner, #banner {
+            opacity: 0;
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: auto;
+            transition: 1s;
+        }
+    </style>
+</head>
+<body>
+    <div id="bg"></div>
+    <div id="fade"></div>
+    <div class="scene" id="worlds">
+        <!--
+        <img src="src/bleach/bleach_logo.png" class="world" onclick="setWorld(0, 'bleach')">
+        <img src="src/chainsawman/chainsawman_logo.png" class="world" onclick="setWorld(1, 'chainsawman')">
+        <img src="src/dragonball/dragonball_logo.png" class="world" onclick="setWorld(2, 'dragonball')">
+        <img src="src/jujutsukaisen/jujutsukaisen_logo.png" class="world" onclick="setWorld(3, 'jujutsukaisen')">
+        <img src="src/naruto/naruto_logo.png" class="world" onclick="setWorld(4, 'naruto')">
+        -->
+        <img src="src/onepiece/onepiece_logo.png" class="world" onclick="setWorld(5, 'onepiece')">
+    </div>
+    <main class="scene">
+        <video id="star-banner" src="" loop autoplay></video>
+        <img src="" id="banner">
+        <div id="content">
+            <img src="" id="logo" onclick="disableWorld(); setTimeout(() => {
+                showWorldBox()
+            }, 2000);">
+            <h2></h2>
+            <span></span>
+        </div>
+        <div id="crew">
+            <img src=""class="crewmates">
+            <img src=""class="crewmates">
+            <img src=""class="crewmates">
+            <img src=""class="crewmates">
+            <img src=""class="crewmates">
+            <img src=""class="crewmates">
+            <img src=""class="crewmates">
+            <img src=""class="crewmates">
+            <img src=""class="crewmates">
+            <img src=""class="crewmates">
+        </div>
+    </main>
+
+    <script src="src/data.js"></script>
+    <script>    
+        const worldBox = document.getElementById('worlds')
+        const worlds = document.getElementsByClassName('world')
+        const content = document.getElementById('content')
+        const star_banner = document.querySelector('video')
+        const banner = document.getElementById('banner')
+        const logo = document.getElementById('logo')
+        const name = document.getElementsByTagName('h2')[0]
+        const desc = document.getElementsByTagName('span')[0]
+        const crewmates = document.getElementsByClassName('crewmates')
+        let preMidia = {
+            'logo': '',
+            'tokens': [],
+            'wpp': [],
+            'name': [],
+            'desc': []
+        }
+
+        function setWorld(wi, world, i=0) {
+            hideWorldBox(wi, world)
+            if(i!== 0) {banner.setAttribute('src', preMidia['wpp'][i].src)} else {star_banner.setAttribute('src', preMidia['wpp'][0].src)}
+            logo.setAttribute('src', preMidia['logo'].src)
+            name.innerText = preMidia['name'][i]
+            desc.innerText = preMidia['desc'][i]
+            for(let i=0; i < crewmates.length; i++) {
+                crewmates[i].setAttribute('src', preMidia['tokens'][i].src)
+                crewmates[i].style.transform = 'translateX(0px) rotate(0deg)'
+                crewmates[i].addEventListener('click', function() {
+                    disableWorld()
+                    setTimeout(() => {
+                        setWorld(wi, world, i)    
+                    }, 2000);
+                    
+                })
+            }
+            star_banner.style.opacity = '1'
+            banner.style.opacity = '1'
+            logo.style.opacity = '1'
+            logo.style.transform = 'translateX(0px)'
+            setTimeout(() => {
+                name.style.opacity = '1'
+                name.style.transform = 'translateX(0px)'
+            }, 500);
+            setTimeout(() => {
+                desc.style.opacity = '1'
+                desc.style.transform = 'translateX(0px)'
+            }, 1000);
+        }
+
+        function setWorld2(wi, world, i=0) {
+            hideWorldBox(wi, world)
+            if(i!== 0) {banner.setAttribute('src', preMidia['wpp'][i].src)} else {star_banner.setAttribute('src', preMidia['wpp'][0].src)}
+            logo.setAttribute('src', preMidia['logo'].src)
+            name.innerText = preMidia['name'][i]
+            desc.innerText = preMidia['desc'][i]
+            for(let i=0; i < crewmates.length; i++) {
+                crewmates[i].setAttribute('src', preMidia['tokens'][i].src)
+                crewmates[i].style.transform = 'translateX(0px) rotate(0deg)'
+            }
+            star_banner.style.opacity = '1'
+            banner.style.opacity = '1'
+            logo.style.opacity = '1'
+            logo.style.transform = 'translateX(0px)'
+            setTimeout(() => {
+                name.style.opacity = '1'
+                name.style.transform = 'translateX(0px)'
+            }, 500);
+            setTimeout(() => {
+                desc.style.opacity = '1'
+                desc.style.transform = 'translateX(0px)'
+            }, 1000);
+        }
+
+        function disableWorld() {
+            desc.style.opacity = '0'
+            desc.style.transform = 'translateX(-50px)'
+            setTimeout(() => {
+                name.style.opacity = '0'
+                name.style.transform = 'translateX(-50px)'
+            }, 500);
+            setTimeout(() => {
+                logo.style.opacity = '0'
+                logo.style.transform = 'translateX(-50px)'
+                for(let i=0; i < crewmates.length; i++) {
+                    crewmates[i].style.transform = 'translateX(100px) rotate(359deg)'
+                }
+                star_banner.style.opacity = '0'
+                banner.style.opacity = '0'
+            }, 1000);
+            setTimeout(() => {
+                banner.setAttribute('src', ``)
+                star_banner.setAttribute('src', ``)
+            }, 1500);
+        }
+
+        function hideWorldBox(wi, world) {
+            worldBox.classList.add('close');
+            worldBox.classList.remove('open');
+
+            const logo = new Image();
+            logo.src = `src/${world}/${world}_logo.png`;
+            preMidia['logo'] = logo;
+            preMidia['tokens'] = [];
+            preMidia['wpp'] = [];
+            preMidia['name'] = [];
+            preMidia['desc'] = [];
+
+            for (let i = 0; i < 10; i++) {
+                const token = new Image();
+                token.src = `src/${world}/tokens/${world}_${data[wi]['tokens'][i]}`;
+                const wpp = new Image();
+                wpp.src = `src/${world}/wpp/${world}_${data[wi]['wpp'][i]}`;
+                const name = data[wi]['name'][i];
+                const desc = data[wi]['desc'][i];
+                preMidia['tokens'].push(token);
+                preMidia['wpp'].push(wpp);
+                preMidia['name'].push(name);
+                preMidia['desc'].push(desc);
+            }
+        }
+
+
+        function showWorldBox() {
+            worldBox.classList.add('open')
+            worldBox.classList.remove('close')
+            preMidia = []
+        }
+
+        addEventListener("DOMContentLoaded", (event) => {showWorldBox()})
+    </script>
+</body>
+</html>
