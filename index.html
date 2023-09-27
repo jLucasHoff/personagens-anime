@@ -266,7 +266,7 @@
 
         function setWorld2(wi, world, i=0) {
             hideWorldBox(wi, world)
-            if(i!== 0) {banner.setAttribute('src', preMidia['wpp'][i].src)} else {star_banner.setAttribute('src', preMidia['wpp'][0].src)}
+            if(i!== 0) {banner.setAttribute('src', preMidia['wpp'][i].src); star_banner.style.opacity = '0'} else {star_banner.style.opacity = '1'}
             logo.setAttribute('src', preMidia['logo'].src)
             name.innerText = preMidia['name'][i]
             desc.innerText = preMidia['desc'][i]
