@@ -1,60 +1,5 @@
 <!--
-
-    naruto
-        naruto
-        sasuke
-        sakura
-        kakashi
-        itachi
-        jiraiya        
-        gaara
-        hinata
-        rock lee
-        shikamaru
-    dragon ball
-        Vegeta
-        Goku
-        Gohan
-        Goku Black
-        Trunks do Futuro
-        Bills
-        Whis
-        Android 17
-        Freeza
-        Kuririn
-    jujutsu kaisen
-        satoro gojo
-        itadori
-        megumi
-        nobara
-        sukuna
-        nanami
-        maki
-        toge
-        yuuta
-        aoi
-    chainsaw man
-        makima
-        power
-        denji
-        aki
-        reze
-        kobeni
-        pochita
-        angel
-        himeno
-        quanxi
-    bleach
-        ichigo
-        zaraki
-        urahara
-        hitsugaya
-        aizen
-        rukia
-        byakuya
-        yourichi
-        ichimaru
-        orihime
+    FALA DEV SAFADO! BEM VINDO AO MEU CÓDIGO, fique a vontade para olhar por aí :)
 -->
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -289,7 +234,8 @@
 
         function setWorld(wi, world, i=0) {
             hideWorldBox(wi, world)
-            if(i!== 0) {banner.setAttribute('src', preMidia['wpp'][i].src)} else {star_banner.setAttribute('src', preMidia['wpp'][0].src)}
+            star_banner.setAttribute('src', preMidia['wpp'][0].src)
+            if(i!== 0) {banner.setAttribute('src', preMidia['wpp'][i].src); star_banner.style.opacity = '0'} else {star_banner.style.opacity = '1'}
             logo.setAttribute('src', preMidia['logo'].src)
             name.innerText = preMidia['name'][i]
             desc.innerText = preMidia['desc'][i]
