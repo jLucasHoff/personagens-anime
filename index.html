@@ -138,24 +138,15 @@
         }
 
         .crewmates {
+            flex: 1;
             position: relative;
             overflow: hidden;
-            width: 50px;
-            height: 50px;
+            display: flex;
+            padding: 10%;
+            box-sizing: border-box;
             border-radius: 50%;
             transform: translateX(100px) rotate(359deg);
-            transition: 1s;
-        }
-
-        .crewmates::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: black;
+            transition: 1s, .3s opacity;
         }
 
         .crewmates:hover {
@@ -171,8 +162,9 @@
             top: 0;
             left: 0;
             width: 100vw;
-            height: auto;
+            height: 100vh;
             transition: 1s;
+            object-fit: cover;
         }
     </style>
 </head>
@@ -180,14 +172,12 @@
     <div id="bg"></div>
     <div id="fade"></div>
     <div class="scene" id="worlds">
-        <!--
-        <img src="src/bleach/bleach_logo.png" class="world" onclick="setWorld(0, 'bleach')">
-        <img src="src/chainsawman/chainsawman_logo.png" class="world" onclick="setWorld(1, 'chainsawman')">
-        <img src="src/dragonball/dragonball_logo.png" class="world" onclick="setWorld(2, 'dragonball')">
-        <img src="src/jujutsukaisen/jujutsukaisen_logo.png" class="world" onclick="setWorld(3, 'jujutsukaisen')">
-        <img src="src/naruto/naruto_logo.png" class="world" onclick="setWorld(4, 'naruto')">
-        -->
-        <img src="src/onepiece/onepiece_logo.png" class="world" onclick="preLoad(5, 'onepiece'); setWorld(5, 'onepiece')">
+        <img src="src/bleach/bleach_logo.png" class="world" onclick="preLoad(0, 'bleach'); setWorld()">
+        <img src="src/chainsawman/chainsawman_logo.png" class="world" onclick="preLoad(1, 'chainsawman'); setWorld()">
+        <img src="src/dragonball/dragonball_logo.png" class="world" onclick="preLoad(2, 'dragonball'); setWorld()">
+        <img src="src/jujutsukaisen/jujutsukaisen_logo.png" class="world" onclick="preLoad(3, 'jujutsukaisen'); setWorld()">
+        <img src="src/naruto/naruto_logo.png" class="world" onclick="preLoad(4, 'naruto'); setWorld()">
+        <img src="src/onepiece/onepiece_logo.png" class="world" onclick="preLoad(5, 'onepiece'); setWorld()">
     </div>
     <main class="scene">
         <video id="star-banner" src="" loop autoplay></video>
@@ -215,6 +205,7 @@
 
     <script src="src/data.js"></script>
     <script>    
+        const first = true
         const worldBox = document.getElementById('worlds')
         const worlds = document.getElementsByClassName('world')
         const content = document.getElementById('content')
@@ -224,6 +215,8 @@
         const name = document.getElementsByTagName('h2')[0]
         const desc = document.getElementsByTagName('span')[0]
         const crewmates = document.getElementsByClassName('crewmates')
+        let wi = null
+        let world = ''
         let preMidia = {
             'logo': '',
             'tokens': [],
@@ -232,25 +225,17 @@
             'desc': []
         }
 
-        function setWorld(wi, world, i=0) {
+        function setWorld(i=0) {
             hideWorldBox(wi, world)
-            star_banner.setAttribute('src', preMidia['wpp'][0].src)
             if(i!== 0) {banner.setAttribute('src', preMidia['wpp'][i].src); star_banner.style.opacity = '0'} else {star_banner.style.opacity = '1'}
             logo.setAttribute('src', preMidia['logo'].src)
             name.innerText = preMidia['name'][i]
             desc.innerText = preMidia['desc'][i]
             for(let i=0; i < crewmates.length; i++) {
                 crewmates[i].setAttribute('src', preMidia['tokens'][i].src)
+                crewmates[i].style.opacity = '1'
                 crewmates[i].style.transform = 'translateX(0px) rotate(0deg)'
-                crewmates[i].addEventListener('click', function() {
-                    disableWorld()
-                    setTimeout(() => {
-                        setWorld(wi, world, i)    
-                    }, 2000);
-                    
-                })
             }
-            star_banner.style.opacity = '1'
             banner.style.opacity = '1'
             logo.style.opacity = '1'
             logo.style.transform = 'translateX(0px)'
@@ -276,22 +261,27 @@
                 logo.style.transform = 'translateX(-50px)'
                 for(let i=0; i < crewmates.length; i++) {
                     crewmates[i].style.transform = 'translateX(100px) rotate(359deg)'
+                    crewmates[i].style.opacity = '0'
                 }
                 star_banner.style.opacity = '0'
                 banner.style.opacity = '0'
             }, 1000);
             setTimeout(() => {
-                banner.setAttribute('src', ``)
                 star_banner.setAttribute('src', ``)
+                banner.setAttribute('src', ``)
             }, 1500);
         }
 
-        function hideWorldBox(wi, world) {
+        function hideWorldBox() {
             worldBox.classList.add('close');
             worldBox.classList.remove('open');
+
+            star_banner.setAttribute('src', preMidia['wpp'][0].src)
         }
 
-        function preLoad(wi, world) {
+        function preLoad(vwi, vworld) {
+            wi = vwi
+            world = vworld
             const logo = new Image();
             logo.src = `src/${world}/${world}_logo.png`;
             preMidia['logo'] = logo;
@@ -321,7 +311,17 @@
             preMidia = []
         }
 
-        addEventListener("DOMContentLoaded", (event) => {showWorldBox()})
+        window.onload = () => {
+            showWorldBox()
+            for(let i=0; i < crewmates.length; i++) {
+                crewmates[i].addEventListener('click', function() {
+                    disableWorld()
+                    setTimeout(() => {
+                        setWorld(i)    
+                    }, 2000);
+                })
+            }
+        }
     </script>
 </body>
 </html>
