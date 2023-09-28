@@ -68,7 +68,7 @@ const data = [
         "wpp": ['1w.mp4', '2w.png', '3w.jpg', '4w.jpg', '5w.jpg', '6w.jpg', '7w.png', '8w.jpg', '9w.png', '10w.jpg']
     },
     {
-        "name": ['Uzumaki Naruto', 'Uchiha Itachi', 'Kakashi Hataque', 'Uchiha Sasuke', 'Nara Shikamaru', 'Jiraiya', 'Gaara', 'Hyuuga Hinata', 'Uchiha Madara', 'Namikaze Minato'],
+        "name": ['Uzumaki Naruto', 'Uchiha Itachi', 'Kakashi Hatake', 'Uchiha Sasuke', 'Nara Shikamaru', 'Jiraiya', 'Gaara', 'Hyuuga Hinata', 'Uchiha Madara', 'Namikaze Minato'],
         "desc": [
             'Nascido em Konohagakure, uma vila ninja escondida nas folhas, Naruto Uzumaki estava destinado à grandeza. Quando nasceu, uma poderosa raposa demoníaca de nove caudas atacou sua aldeia. Com uma onda de sua cauda, a raposa demoníaca poderia levantar tsunamis e quebrar montanhas.',
             'Itachi nasceu no clã Uchiha e foi elogiado por todos como o melhor de sua geração - um gênio acima de todos os outros. Mesmo para os padrões do clã Uchiha, adepto da batalha, a destreza de Itachi superou em muito todas as outras. No entanto, nem mesmo sua família, amigos ou professores conseguiam entendê-lo.',
