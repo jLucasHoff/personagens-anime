@@ -165,6 +165,7 @@
 
         span {
             font-family: 'body';
+            font-size: 2vh;
             letter-spacing: 1.2px;
             line-height: 150%;
             width: 35%;
@@ -215,6 +216,64 @@
 
         #banner {
             z-index: -2;
+        }
+
+        @media only screen and (orientation: portrait) {
+
+            #fade {
+                background: rgba(0,0,0,0.8519782913165266);
+            }
+        #worlds {
+            flex-direction: column;
+        }
+        .world-select {
+            width: 100vw;
+        }
+
+        .world {
+            transform: rotate(0deg);
+            max-width: 50vw;
+        }
+
+        main {
+            flex-direction: column;
+        }
+
+        #content {
+            gap: 5vw;
+        }
+
+        #logo {
+            margin: 0 auto;
+            width: 50vw;
+        }
+
+        h2 {
+            font-size: 12.5vw;
+        }
+
+        span {
+            width: 100%;
+            text-align: center;
+        }
+
+        #crew {
+            position: absolute;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            left: 0;
+            bottom: 0;
+            height: 10vh;
+            gap: 5vw;
+            overflow: scroll;
+        }
+
+        .crewmates {
+            height: 75%;
+            padding: 0;
+            border-radius: 50%;
+        }
         }
     </style>
 </head>
