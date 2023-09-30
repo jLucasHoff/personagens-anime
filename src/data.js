@@ -14,7 +14,8 @@ const data = [
             'Como Gin não demonstra nenhuma emoção ao falar combinado com seu uso de sarcasmo, ele é desconfiado por muitos, mais notavelmente Toshiro Hitsugaya e Rukia Kuchiki. Rukia comentou uma vez sobre como ela se sentia como cobras estavam enrolando em seu pescoço sempre que Gin falava.'
         ],
         "tokens": ['1t.png', '2t.png', '3t.png', '4t.png', '5t.png', '6t.png', '7t.png', '8t.png', '9t.png', '10t.png'],
-        "wpp": ['1w.mp4', '2w.png', '3w.jpg', '4w.jpg', '5w.jpg', '6w.png', '7w.jpg', '8w.png', '9w.png', '10w.jpg']
+        "wpp": ['1w.png', '2w.png', '3w.jpg', '4w.jpg', '5w.jpg', '6w.png', '7w.jpg', '8w.png', '9w.png', '10w.jpg'],
+        "video": "1w.mp4"
     },
     {
         "name": ['Makima', 'Power', 'Denji', 'Hayakawa Aki', 'Reze', 'Higashiyama Kobeni', 'Pochita', 'Himeno', 'Angel Devil', 'Kishibe'],
@@ -31,7 +32,8 @@ const data = [
             'Kishibe é um homem grisalho com pelos faciais desgrenhados e uma cicatriz costurada que atravessa sua bochecha esquerda de sua boca. Quando jovem, seu cabelo era preto, mas desde então tornou-se grisalho.'
         ],
         "tokens": ['1t.png', '2t.png', '3t.png', '4t.png', '5t.png', '6t.png', '7t.png', '8t.png', '9t.png', '10t.png'],
-        "wpp": ['1w.mp4', '2w.png', '3w.jpg', '4w.jpg', '5w.jpg', '6w.png', '7w.jpg', '8w.jpg', '9w.png', '10w.jpg']
+        "wpp": ['1w.png', '2w.png', '3w.jpg', '4w.jpg', '5w.jpg', '6w.png', '7w.jpg', '8w.jpg', '9w.png', '10w.jpg'],
+        "video": "1w.mp4"
     },
     {
         "name": ['Son Goku', 'Vegeta', 'Son Gohan', 'Piccolo', 'Future Trunks', 'Freeza', 'Goku Black', 'Bulma', 'Mestre Kami', 'Kuririn'],
@@ -48,7 +50,8 @@ const data = [
             'Uma vez um rival feroz de Son Goku, ele rapidamente se tornou seu melhor amigo enquanto treinava com o Mestre Roshi. Ele também é próximo do filho de Goku, Gohan. Ele acaba se casando com o Android 18 e se estabelece, tendo uma filha chamada Marron.'
         ],
         "tokens": ['1t.png', '2t.png', '3t.png', '4t.png', '5t.png', '6t.png', '7t.png', '8t.png', '9t.png', '10t.png'],
-        "wpp": ['1w.mp4', '2w.png', '3w.jpg', '4w.png', '5w.png', '6w.jpg', '7w.png', '8w.png', '9w.png', '10w.png']
+        "wpp": ['1w.png', '2w.png', '3w.jpg', '4w.png', '5w.png', '6w.jpg', '7w.png', '8w.png', '9w.png', '10w.png'],
+        "video": "1w.mp4"
     },
     {
         "name": ['Satoru Gojo', 'Yuji Itadori', 'Megumi Fushiguro', 'Nobara Kugisake', 'Ryomen Sukuna', 'Kento Nanami', 'Maki Zenin', 'Toge Inumaki', 'Yuta Okkutsu', 'Aoi Todo'],
@@ -65,7 +68,8 @@ const data = [
             'Aoi Todo é um personagem coadjuvante da série Jujutsu Kaisen. Ele é um estudante do terceiro ano da Kyoto Jujutsu High School e um feiticeiro de jujutsu de grau 1. Ele foi orientado por Yuki Tsukumo em sua juventude e considera Yuji Itadori seu melhor amigo.'
         ],
         "tokens": ['1t.png', '2t.png', '3t.png', '4t.png', '5t.png', '6t.png', '7t.png', '8t.png', '9t.png', '10t.png'],
-        "wpp": ['1w.mp4', '2w.png', '3w.jpg', '4w.jpg', '5w.jpg', '6w.jpg', '7w.png', '8w.jpg', '9w.png', '10w.jpg']
+        "wpp": ['1w.png', '2w.png', '3w.jpg', '4w.jpg', '5w.jpg', '6w.jpg', '7w.png', '8w.jpg', '9w.png', '10w.jpg'],
+        "video": '1w.mp4'
     },
     {
         "name": ['Uzumaki Naruto', 'Uchiha Itachi', 'Kakashi Hatake', 'Uchiha Sasuke', 'Nara Shikamaru', 'Jiraiya', 'Gaara', 'Hyuuga Hinata', 'Uchiha Madara', 'Namikaze Minato'],
@@ -82,7 +86,8 @@ const data = [
             'Minato é considerado um dos maiores ninjas que Konoha já produziu, com um talento natural que não era visto há muitos anos. Ele se especializou em usar o Hiraishin no Jutsu, uma técnica que o Segundo Hokage, Tobirama criou, que essencialmente lhe permitiu se teletransportar para qualquer local com o uso de um selo especial.'
         ],
         "tokens": ['1t.png', '2t.png', '3t.png', '4t.png', '5t.png', '6t.png', '7t.png', '8t.png', '9t.png', '10t.png'],
-        "wpp": ['1w.mp4', '2w.jpg', '3w.jpg', '4w.jpeg', '5w.jpg', '6w.jpeg', '7w.png', '8w.jpg', '9w.png', '10w.jpg']
+        "wpp": ['1w.png', '2w.jpg', '3w.jpg', '4w.jpeg', '5w.jpg', '6w.jpeg', '7w.png', '8w.jpg', '9w.png', '10w.jpg'],
+        "video": "1w.mp4"
     },
     {
         "name": ['Monkey D. Luffy', 'Roronoa Zoro', 'Nami', 'Usopp', 'Vinsmoke Sanji', 'Tony Tony Chopper', 'Nico Robin', 'Franky', 'Brook', 'Jinbe'],
@@ -99,6 +104,7 @@ const data = [
             '\"Cavaleiro do Mar\" Jinbe é o timoneiro dos Piratas do Chapéu de Palha. Ele é o décimo membro da tripulação e o nono a se juntar, fazendo isso durante o Arco País de Wano. Jinbe é um homem-peixe sendo um tubarão-baleia e um poderoso mestre do karatê Homem-Peixe. Seu sonho é realizar o desejo moribundo de seu ex-capitão Fisher Tiger de coexistência e igualdade entre humanos e homens-peixe.'
         ],
         "tokens": ['1t.png', '2t.png', '3t.png', '4t.png', '5t.png', '6t.png', '7t.png', '8t.png', '9t.png', '10t.png'],
-        "wpp": ['1w.mp4', '2w.jpg', '3w.jpg', '4w.png', '5w.jpg', '6w.png', '7w.jpg', '8w.png', '9w.png', '10w.jpg']
+        "wpp": ['1w.png', '2w.jpg', '3w.jpg', '4w.png', '5w.jpg', '6w.png', '7w.jpg', '8w.png', '9w.png', '10w.jpg'],
+        "video": "1w.mp4"
     }
 ]
