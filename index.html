@@ -274,17 +274,21 @@
         #crew {
             position: absolute;
             flex-direction: row;
-            left: 10vw;
-            bottom: 0;
-            height: 10vh;
-            gap: 10vw;
-            overflow: scroll;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-content: flex-end;
+            left: 0;
+            top: 0;
+            height: 5vh;
+            gap: 2.5vh;
+            width: 100vw;
         }
 
         .crewmates {
-            height: 75%;
+            flex: none;
             padding: 0;
             border-radius: 50%;
+            width: 5vh
         }
         }
     </style>
