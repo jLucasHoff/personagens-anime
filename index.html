@@ -26,6 +26,11 @@
             outline: none;
             color: white;
         }
+        
+        html {
+            overflow: hidden;
+        }
+
         body {
             width: 100vw;
             height: 100vh;
@@ -127,6 +132,7 @@
 
         main {
             flex-direction: row;
+            overflow: hidden;
         }
 
         main > * {
@@ -189,14 +195,12 @@
             padding: 10%;
             box-sizing: border-box;
             border-radius: 50%;
-            transform: translateX(100px) rotate(359deg);
             transition: 1s, .3s opacity;
         }
 
         .crewmates:hover {
             cursor: pointer;
             transition: .3s;
-            transform: translateX(-25%) rotate(-45deg) !important;
         }
 
         #star-banner, #banner {
@@ -216,6 +220,16 @@
 
         #banner {
             z-index: -2;
+        }
+
+        @media only screen and (orientat: landscape) {
+            .crewmates {
+                transform: translateX(100px) rotate(359deg);
+            }
+
+            .crewmates:hover {
+                transform: translateX(-25%) rotate(-45deg) !important;
+            }
         }
 
         @media only screen and (orientation: portrait) {
@@ -260,12 +274,10 @@
         #crew {
             position: absolute;
             flex-direction: row;
-            justify-content: flex-start;
-            align-items: center;
-            left: 0;
+            left: 10vw;
             bottom: 0;
             height: 10vh;
-            gap: 5vw;
+            gap: 10vw;
             overflow: scroll;
         }
 
@@ -346,6 +358,9 @@
                 crewmates[i].style.opacity = '1'
                 crewmates[i].style.transform = 'translateX(0px) rotate(0deg)'
             }
+            if(!document.querySelector('.crewmate-sel')) {crewmates[i].classList.add('crewmate-sel')}
+            else {document.querySelector('.crewmate-sel').classList.remove('crewmate-sel'); crewmates[i].classList.add('crewmate-sel')}
+
             banner.style.opacity = '1'
             logo.style.opacity = '1'
             logo.style.transform = 'translateX(0px)'
