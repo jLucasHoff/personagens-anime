@@ -188,7 +188,8 @@
         }
 
         .crewmates {
-            flex: 1;
+            width: 5vw;
+            flex: 0 0 auto;
             position: relative;
             overflow: hidden;
             display: flex;
@@ -357,7 +358,11 @@
             logo.setAttribute('src', preMidia['logo'].src)
             name.innerText = preMidia['name'][i]
             desc.innerText = preMidia['desc'][i]
-            for(let i=0; i < crewmates.length; i++) {
+            for(button of crewmates) {
+                button.style.display = 'none'
+            }
+            for(let i=0; i < preMidia['name'].length; i++) {
+                crewmates[i].style.display = 'flex'
                 crewmates[i].setAttribute('src', preMidia['tokens'][i].src)
                 crewmates[i].style.opacity = '1'
                 crewmates[i].style.transform = 'translateX(0px) rotate(0deg)'
@@ -420,7 +425,7 @@
             preMidia['desc'] = [];
             preMidia['video'] = ''
 
-            for (let i = 0; i < 10; i++) {
+            for (let i = 0; i < data[wi]['name'].length; i++) {
                 const token = new Image();
                 token.src = `src/${world}/tokens/${world}_${data[wi]['tokens'][i]}`;
                 const wpp = new Image();
