@@ -1,5 +1,6 @@
 const data = [
     {
+        "anime": "bleach",
         "name": ['Kurosaki Ichigo', 'Zaraki Kenpachi', 'Urahara Kisuke', 'Aizen Sousuke', 'Hitsugaya Toushirou', 'Kuchiki Rukia', 'Kuchiki Byakuya', 'Jaegerjaquez Grimmjow', 'Shihouin Yoruichi', 'Ichimaru Gin'],
         "desc": [
             'Na maior parte do tempo, Ichigo parece um adolescente normal, a única exceção é seu cabelo espetado e laranja, uma característica que ele tem sido ridicularizado por anos. Ele é uma pessoa bastante alta e magra, com pele de pêssego e olhos castanhos. Quando em sua forma espiritual, Ichigo usa traje Shinigami padrão com a adição de uma alça em seu peito.',
@@ -18,6 +19,7 @@ const data = [
         "video": "1w.mp4"
     },
     {
+        "anime": "chainsawman",
         "name": ['Makima', 'Power', 'Denji', 'Hayakawa Aki', 'Reze', 'Higashiyama Kobeni', 'Pochita', 'Himeno', 'Angel Devil', 'Kishibe'],
         "desc": [
             'Makima é uma fã extrema do Demônio da Serra Elétrica, e por procuração Denji. Fascinada por sua capacidade de acabar com o conceito encarnado de um demônio ao comê-los, seu objetivo é trazer o Demônio da Serra Elétrica sob seu controle, usando seu poder para criar um mundo "ideal" sem medos.',
@@ -36,6 +38,7 @@ const data = [
         "video": "1w.mp4"
     },
     {
+        "anime": "dragonball",
         "name": ['Son Goku', 'Vegeta', 'Son Gohan', 'Piccolo', 'Future Trunks', 'Freeza', 'Goku Black', 'Bulma', 'Mestre Kami', 'Kuririn'],
         "desc": [
             'Originalmente chamado Kakarot, Gokuu nasce membro de uma raça de extraterrestres chamada Saiyajins. Logo após seu nascimento, Gokuu é enviado de seu planeta nativo Vegeta para a Terra, para potencial venda no mercado intergaláctico, destruindo toda a sua vida;',
@@ -54,6 +57,7 @@ const data = [
         "video": "1w.mp4"
     },
     {
+        "anime": "jujutsukaisen",
         "name": ['Satoru Gojo', 'Yuji Itadori', 'Megumi Fushiguro', 'Nobara Kugisake', 'Ryomen Sukuna', 'Kento Nanami', 'Maki Zenin', 'Toge Inumaki', 'Yuta Okkutsu', 'Aoi Todo'],
         "desc": [
             'Satoru Gojo é um dos principais protagonistas da série Jujutsu Kaisen. Ele é um feiticeiro de jujutsu de grau especial e amplamente reconhecido como o mais forte do mundo.',
@@ -72,6 +76,7 @@ const data = [
         "video": '1w.mp4'
     },
     {
+        "anime": "naruto",
         "name": ['Uzumaki Naruto', 'Uchiha Itachi', 'Kakashi Hatake', 'Uchiha Sasuke', 'Nara Shikamaru', 'Jiraiya', 'Gaara', 'Hyuuga Hinata', 'Uchiha Madara', 'Namikaze Minato'],
         "desc": [
             'Nascido em Konohagakure, uma vila ninja escondida nas folhas, Naruto Uzumaki estava destinado à grandeza. Quando nasceu, uma poderosa raposa demoníaca de nove caudas atacou sua aldeia. Com uma onda de sua cauda, a raposa demoníaca poderia levantar tsunamis e quebrar montanhas.',
@@ -90,6 +95,7 @@ const data = [
         "video": "1w.mp4"
     },
     {
+        "anime": "onepiece",
         "name": ['Monkey D. Luffy', 'Roronoa Zoro', 'Nami', 'Usopp', 'Vinsmoke Sanji', 'Tony Tony Chopper', 'Nico Robin', 'Franky', 'Brook', 'Jinbe'],
         "desc": [
             'Monkey D. Luffy, também conhecido como \“Luffy do Chapéu de Palha\” e comumente como \“Chapéu de Palha\”, é o fundador e capitão dos cada vez mais infames e poderosos Piratas do Chapéu de Palha, bem como o mais poderoso de seus melhores lutadores. Ele deseja encontrar o tesouro lendário deixado para trás pelo falecido Gol D. Roger e assim se tornar o Rei dos Piratas.',

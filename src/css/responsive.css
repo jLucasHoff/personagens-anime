@@ -1,0 +1,9 @@
+@media (orientation: portrait){
+    #cs-m {
+        display: flex;
+    }
+
+    .character-selector {
+        display: none;
+    }
+}
